@@ -21,8 +21,37 @@
         </ul>
       </nav>
 
-      <!-- Utils: search, lang, theme, hamburger -->
+      <!-- Utils: radio, search, lang, theme, hamburger -->
       <div class="header-utils">
+
+        <!-- Radio Player -->
+        <div class="radio-player" id="radio-player">
+          <audio id="radio-audio" preload="none">
+            <source src="https://stream.radio.navo.tj/live" type="audio/mpeg">
+          </audio>
+          <button class="radio-btn" id="radio-toggle"
+                  aria-label="Слушать RADIO NAVO 96,5 FM"
+                  aria-pressed="false"
+                  title="RADIO NAVO 96,5 FM">
+            <!-- Live indicator dot -->
+            <span class="radio-dot" aria-hidden="true"></span>
+            <!-- Play / Pause icons -->
+            <span class="radio-icons" aria-hidden="true">
+              <svg class="radio-icon-play" width="11" height="11" fill="currentColor" viewBox="0 0 24 24">
+                <polygon points="5,3 20,12 5,21"/>
+              </svg>
+              <svg class="radio-icon-pause" width="11" height="11" fill="currentColor" viewBox="0 0 24 24">
+                <rect x="5" y="3" width="5" height="18" rx="1.5"/>
+                <rect x="14" y="3" width="5" height="18" rx="1.5"/>
+              </svg>
+            </span>
+            <!-- Label text -->
+            <span class="radio-label" aria-hidden="true">
+              <span class="radio-name">RADIO NAVO</span>
+              <span class="radio-freq">96,5 FM</span>
+            </span>
+          </button>
+        </div>
 
         <!-- Search -->
         <button class="search-btn" aria-label="Открыть поиск" aria-haspopup="dialog">

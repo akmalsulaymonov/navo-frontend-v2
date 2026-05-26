@@ -819,6 +819,151 @@
             <a href="article.html?id=2" class="digit-link">Подробнее →</a>
           </div>
 
+          <!-- Weather widget 300×350 -->
+          <div class="weather-widget" role="complementary" aria-label="Погода в Душанбе">
+
+            <!-- Current weather -->
+            <div class="weather-top">
+              <div class="weather-header">
+                <span class="weather-label">
+                  <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="10"/></svg>
+                  Погода
+                </span>
+                <time class="weather-date-tag" datetime="2024-07-04">4 июл 2024</time>
+              </div>
+
+              <div class="weather-location">
+                <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Душанбе, Таджикистан
+              </div>
+
+              <div class="weather-main">
+                <!-- Sun icon -->
+                <span class="wicon-sun" aria-hidden="true">
+                  <svg width="62" height="62" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5" fill="currentColor"/>
+                    <g stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none">
+                      <line x1="12" y1="1"    x2="12" y2="3"/>
+                      <line x1="12" y1="21"   x2="12" y2="23"/>
+                      <line x1="4.22"  y1="4.22"  x2="5.64"  y2="5.64"/>
+                      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                      <line x1="1"    y1="12"   x2="3"    y2="12"/>
+                      <line x1="21"   y1="12"   x2="23"   y2="12"/>
+                      <line x1="4.22"  y1="19.78" x2="5.64"  y2="18.36"/>
+                      <line x1="18.36" y1="5.64"  x2="19.78" y2="4.22"/>
+                    </g>
+                  </svg>
+                </span>
+
+                <div>
+                  <div class="weather-temp">+34°</div>
+                  <div class="weather-condition">Ясно, солнечно</div>
+                  <div class="weather-hl">
+                    <span class="weather-high">↑ +36°</span>
+                    <span class="weather-hl-sep">·</span>
+                    <span class="weather-low">↓ +22°</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stats row: feels like / humidity / wind -->
+            <div class="weather-stats">
+
+              <div class="weather-stat">
+                <span class="weather-stat-icon">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+                </span>
+                <span class="weather-stat-label">Ощущается</span>
+                <span class="weather-stat-value">+38°</span>
+              </div>
+
+              <div class="weather-stat">
+                <span class="weather-stat-icon">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                </span>
+                <span class="weather-stat-label">Влажность</span>
+                <span class="weather-stat-value">28%</span>
+              </div>
+
+              <div class="weather-stat">
+                <span class="weather-stat-icon">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+                </span>
+                <span class="weather-stat-label">Ветер</span>
+                <span class="weather-stat-value">8 км/ч</span>
+              </div>
+
+            </div>
+
+            <!-- 5-day forecast -->
+            <div class="weather-forecast" aria-label="Прогноз на 5 дней">
+
+              <div class="weather-fc-item today">
+                <span class="weather-fc-day">Пн</span>
+                <span class="wicon-sun" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+                </span>
+                <span class="weather-fc-temp">34°</span>
+              </div>
+
+              <div class="weather-fc-item">
+                <span class="weather-fc-day">Вт</span>
+                <span class="wicon-sun" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v2M4.93 4.93l1.41 1.41M19.07 4.93l-1.41 1.41M20 12h2M15.947 12.65a4 4 0 0 0-5.925-4.128"/><path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z"/></svg>
+                </span>
+                <span class="weather-fc-temp">32°</span>
+              </div>
+
+              <div class="weather-fc-item">
+                <span class="weather-fc-day">Ср</span>
+                <span class="wicon-cloud" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                </span>
+                <span class="weather-fc-temp">29°</span>
+              </div>
+
+              <div class="weather-fc-item">
+                <span class="weather-fc-day">Чт</span>
+                <span class="wicon-cloud" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                </span>
+                <span class="weather-fc-temp">27°</span>
+              </div>
+
+              <div class="weather-fc-item">
+                <span class="weather-fc-day">Пт</span>
+                <span class="wicon-rain" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M16 14v6M8 14v6M12 16v6"/></svg>
+                </span>
+                <span class="weather-fc-temp">24°</span>
+              </div>
+
+              <div class="weather-fc-item">
+                <span class="weather-fc-day">Сб</span>
+                <span class="wicon-rain" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M16 14v6M8 14v6M12 16v6"/></svg>
+                </span>
+                <span class="weather-fc-temp">23°</span>
+              </div>
+
+              <div class="weather-fc-item">
+                <span class="weather-fc-day">Вс</span>
+                <span class="wicon-rain" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M16 14v6M8 14v6M12 16v6"/></svg>
+                </span>
+                <span class="weather-fc-temp">22°</span>
+              </div>
+
+            </div>
+
+            <!-- Source -->
+            <div class="weather-source">
+              <a href="#" class="weather-source-link" rel="noopener">weather.tj</a>
+            </div>
+
+          </div>
+
           <!-- Ad 300x250 -->
           <div class="article-ad-block article-ad-block--300x250" role="complementary" aria-label="Рекламный блок">
             <span class="article-ad-label">Реклама</span>

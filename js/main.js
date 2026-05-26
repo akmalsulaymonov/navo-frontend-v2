@@ -8,6 +8,7 @@ import { initHeader }                    from './header.js';
 import { initTicker }                    from './ticker.js';
 import { initBookmarks }                 from './bookmarks.js';
 import { loadMotion, initAnimations }    from './animations.js';
+import { initRadio }                     from './radio.js';
 
 /* Apply theme immediately to avoid flash */
 applyTheme(getPreferredTheme());
@@ -17,6 +18,7 @@ async function bootstrap() {
   await loadPartials();
 
   initHeader();
+  initRadio();
   initTicker();
   initBookmarks();
   initCookieBanner();

@@ -196,20 +196,171 @@
       </header>
       <!-- /.article-header -->
 
-      <!-- ── Hero image ── -->
-      <figure class="article-hero-figure">
-        <img
-          class="article-hero-img"
-          src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1280&q=80"
-          alt="Лидеры государств — членов ШОС на саммите в Астане, 4 июля 2024 года"
-          width="1280" height="720"
-          fetchpriority="high"
-        >
-        <figcaption class="article-hero-caption">
-          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          Участники саммита ШОС в Астане, 4 июля 2024 года. Фото: пресс-служба Президента Республики Таджикистан
+      <!-- ── Article Media Gallery ── -->
+      <figure class="article-hero-figure article-media-gallery" id="article-gallery" aria-label="Фото и видео к статье">
+
+        <!-- Main stage (big image / video) -->
+        <div class="gallery-stage">
+
+          <!-- Slide 1 — ШОС summit (hero) -->
+          <div class="gallery-slide active" data-index="0"
+               data-caption="Участники саммита ШОС в Астане, 4 июля 2024 года. Фото: пресс-служба Президента Республики Таджикистан">
+            <img class="gallery-stage-img"
+                 src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1280&q=80"
+                 alt="Лидеры государств — членов ШОС на саммите в Астане"
+                 width="1280" height="720" fetchpriority="high">
+          </div>
+
+          <!-- Slide 2 — Подписание документов -->
+          <div class="gallery-slide" data-index="1"
+               data-caption="Подписание межгосударственных соглашений на полях саммита. Фото: пресс-служба ШОС">
+            <img class="gallery-stage-img"
+                 src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1280&q=80"
+                 alt="Подписание межгосударственных соглашений"
+                 width="1280" height="720" loading="lazy">
+          </div>
+
+          <!-- Slide 3 — Пресс-конференция -->
+          <div class="gallery-slide" data-index="2"
+               data-caption="Пресс-конференция по итогам двухдневного саммита. Фото: пресс-служба ШОС">
+            <img class="gallery-stage-img"
+                 src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=1280&q=80"
+                 alt="Пресс-конференция по итогам саммита ШОС"
+                 width="1280" height="720" loading="lazy">
+          </div>
+
+          <!-- Slide 4 — Переговоры -->
+          <div class="gallery-slide" data-index="3"
+               data-caption="Переговоры в двустороннем формате на полях форума. Фото: пресс-служба Акорды">
+            <img class="gallery-stage-img"
+                 src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1280&q=80"
+                 alt="Переговоры за круглым столом"
+                 width="1280" height="720" loading="lazy">
+          </div>
+
+          <!-- Slide 5 — Культурная программа -->
+          <div class="gallery-slide" data-index="4"
+               data-caption="Культурная программа в рамках саммита ШОС в Астане. Фото: ТАСС">
+            <img class="gallery-stage-img"
+                 src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1280&q=80"
+                 alt="Культурная программа саммита"
+                 width="1280" height="720" loading="lazy">
+          </div>
+
+          <!-- Slide 6 — Совместное фото -->
+          <div class="gallery-slide" data-index="5"
+               data-caption="Совместное фото глав государств — членов ШОС в Астане. Фото: пресс-служба Акорды">
+            <img class="gallery-stage-img"
+                 src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=1280&q=80"
+                 alt="Совместное фото глав государств ШОС"
+                 width="1280" height="720" loading="lazy">
+          </div>
+
+          <!-- Slide 7 — Видео -->
+          <div class="gallery-slide gallery-slide--video" data-index="6"
+               data-caption="Видео: пресс-конференция Генерального секретаря ШОС по итогам саммита в Астане · 18:43"
+               data-youtube-id="jNQXAC9IVRw"
+               role="button" tabindex="0"
+               aria-label="Воспроизвести видео: пресс-конференция Генерального секретаря ШОС, 18:43">
+            <img class="gallery-stage-img"
+                 src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1280&q=80"
+                 alt="Видео: пресс-конференция по итогам саммита ШОС"
+                 width="1280" height="720" loading="lazy">
+            <div class="gallery-stage-play" aria-hidden="true">
+              <div class="gallery-stage-play-circle">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--color-primary)" aria-hidden="true">
+                  <polygon points="6,3 20,12 6,21"/>
+                </svg>
+              </div>
+              <span class="gallery-stage-play-label">Смотреть · 18:43</span>
+            </div>
+          </div>
+
+          <!-- Navigation arrows -->
+          <button class="gallery-nav gallery-nav--prev" aria-label="Предыдущий слайд">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m15 18-6-6 6-6"/>
+            </svg>
+          </button>
+          <button class="gallery-nav gallery-nav--next" aria-label="Следующий слайд">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+          </button>
+
+          <!-- Slide counter -->
+          <div class="gallery-counter" aria-live="polite" aria-atomic="true">
+            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+            <span class="gallery-counter-text">1 / 7</span>
+          </div>
+
+        </div><!-- /.gallery-stage -->
+
+        <!-- Caption (updates per slide) -->
+        <figcaption class="gallery-caption">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/>
+            <circle cx="12" cy="13" r="4"/>
+          </svg>
+          <span class="gallery-caption-text">Участники саммита ШОС в Астане, 4 июля 2024 года. Фото: пресс-служба Президента Республики Таджикистан</span>
         </figcaption>
-      </figure>
+
+        <!-- Thumbnail strip -->
+        <div class="gallery-thumbs" role="tablist" aria-label="Выбрать фото или видео">
+
+          <button class="gallery-thumb active" role="tab" aria-selected="true" data-index="0"
+                  aria-label="Фото 1: встреча лидеров ШОС">
+            <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=140&h=140&fit=crop&q=60"
+                 alt="" width="70" height="70" loading="lazy">
+          </button>
+
+          <button class="gallery-thumb" role="tab" aria-selected="false" data-index="1"
+                  aria-label="Фото 2: подписание соглашений">
+            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=140&h=140&fit=crop&q=60"
+                 alt="" width="70" height="70" loading="lazy">
+          </button>
+
+          <button class="gallery-thumb" role="tab" aria-selected="false" data-index="2"
+                  aria-label="Фото 3: пресс-конференция">
+            <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=140&h=140&fit=crop&q=60"
+                 alt="" width="70" height="70" loading="lazy">
+          </button>
+
+          <button class="gallery-thumb" role="tab" aria-selected="false" data-index="3"
+                  aria-label="Фото 4: переговоры">
+            <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=140&h=140&fit=crop&q=60"
+                 alt="" width="70" height="70" loading="lazy">
+          </button>
+
+          <button class="gallery-thumb" role="tab" aria-selected="false" data-index="4"
+                  aria-label="Фото 5: культурная программа">
+            <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=140&h=140&fit=crop&q=60"
+                 alt="" width="70" height="70" loading="lazy">
+          </button>
+
+          <button class="gallery-thumb" role="tab" aria-selected="false" data-index="5"
+                  aria-label="Фото 6: совместное фото">
+            <img src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=140&h=140&fit=crop&q=60"
+                 alt="" width="70" height="70" loading="lazy">
+          </button>
+
+          <button class="gallery-thumb gallery-thumb--video" role="tab" aria-selected="false" data-index="6"
+                  aria-label="Видео: пресс-конференция, 18:43">
+            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=140&h=140&fit=crop&q=60"
+                 alt="" width="70" height="70" loading="lazy">
+            <span class="gallery-thumb-play" aria-hidden="true">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                <polygon points="6,3 20,12 6,21"/>
+              </svg>
+            </span>
+          </button>
+
+        </div><!-- /.gallery-thumbs -->
+
+      </figure><!-- /.article-media-gallery -->
 
       <!-- ── Two-column layout ── -->
       <div class="article-layout">
@@ -271,73 +422,6 @@
             <p>Таджикистан также официально выдвинул кандидатуру Душанбе на размещение постоянного секретариата нового климатического фонда организации. Предложение получило предварительную поддержку большинства делегаций и будет рассмотрено в ходе консультаций на уровне министров иностранных дел до конца 2024 года. По оценке экспертов, размещение секретариата в таджикской столице придаст дополнительный импульс привлечению международного «зелёного» финансирования.</p>
 
           </article>
-
-          <!-- ── Photo gallery ── -->
-          <section class="article-gallery" aria-labelledby="gallery-title">
-            <p class="article-section-label" id="gallery-title">Фотогалерея</p>
-            <div class="gallery-grid">
-
-              <div class="gallery-item" tabindex="0" role="button" aria-label="Открыть фото 1: встреча лидеров ШОС">
-                <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&q=75" alt="Встреча лидеров ШОС в Астане" width="600" height="450" loading="lazy">
-                <div class="gallery-item-overlay" aria-hidden="true"><svg class="gallery-zoom-icon" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-              </div>
-
-              <div class="gallery-item" tabindex="0" role="button" aria-label="Открыть фото 2: подписание документов">
-                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=75" alt="Подписание межгосударственных соглашений" width="600" height="450" loading="lazy">
-                <div class="gallery-item-overlay" aria-hidden="true"><svg class="gallery-zoom-icon" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-              </div>
-
-              <div class="gallery-item" tabindex="0" role="button" aria-label="Открыть фото 3: пресс-конференция">
-                <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=600&q=75" alt="Пресс-конференция по итогам саммита" width="600" height="450" loading="lazy">
-                <div class="gallery-item-overlay" aria-hidden="true"><svg class="gallery-zoom-icon" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-              </div>
-
-              <div class="gallery-item gallery-item--hidden" tabindex="0" role="button" aria-label="Открыть фото 4: переговоры за круглым столом">
-                <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&q=75" alt="Переговоры за круглым столом" width="600" height="450" loading="lazy">
-                <div class="gallery-item-overlay" aria-hidden="true"><svg class="gallery-zoom-icon" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-              </div>
-
-              <div class="gallery-item gallery-item--hidden" tabindex="0" role="button" aria-label="Открыть фото 5: культурная программа">
-                <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&q=75" alt="Культурная программа саммита" width="600" height="450" loading="lazy">
-                <div class="gallery-item-overlay" aria-hidden="true"><svg class="gallery-zoom-icon" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-              </div>
-
-              <div class="gallery-item gallery-item--hidden" tabindex="0" role="button" aria-label="Открыть фото 6: совместное фото лидеров">
-                <img src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=600&q=75" alt="Совместное фото глав государств ШОС" width="600" height="450" loading="lazy">
-                <div class="gallery-item-overlay" aria-hidden="true"><svg class="gallery-zoom-icon" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-              </div>
-
-            </div>
-            <div class="gallery-show-all">
-              <button class="btn btn-ghost btn-sm" type="button" id="gallery-show-all-btn">
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                  <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
-                </svg>
-                Все фото (6)
-              </button>
-            </div>
-          </section>
-
-          <!-- ── Video ── -->
-          <section class="article-video" aria-labelledby="video-title">
-            <p class="article-section-label" id="video-title">Видео</p>
-            <div class="video-embed" role="button" tabindex="0" aria-label="Воспроизвести видеозапись пресс-конференции по итогам саммита ШОС" data-youtube-id="jNQXAC9IVRw">
-              <img
-                src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=70"
-                alt="Видео: пресс-конференция по итогам саммита ШОС в Астане"
-                width="800" height="450"
-                loading="lazy"
-              >
-              <div class="video-play-btn" aria-hidden="true">
-                <div class="video-play-circle">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--color-primary)">
-                    <polygon points="5 3 19 12 5 21 5 3"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <p class="video-caption">Пресс-конференция Генерального секретаря ШОС по итогам саммита в Астане — 4 июля 2024. Продолжительность: 18:43</p>
-          </section>
 
           <!-- ── Tags ── -->
           <div class="article-tags">
@@ -558,7 +642,7 @@
       if (bar) {
         const updateProgress = () => {
           const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-          const progress = docHeight > 0 ? Math.min(1, window.scrollY / docHeight) : 0;
+          const progress  = docHeight > 0 ? Math.min(1, window.scrollY / docHeight) : 0;
           bar.style.transform = `scaleX(${progress})`;
           bar.setAttribute('aria-valuenow', Math.round(progress * 100));
         };
@@ -566,22 +650,68 @@
         updateProgress();
       }
 
-      // ── Gallery: show all + lightbox ──
-      const galleryGrid = document.querySelector('.gallery-grid');
-      if (galleryGrid) {
-        // Show-all button reveals hidden items
-        const showAllBtn = document.getElementById('gallery-show-all-btn');
-        if (showAllBtn) {
-          showAllBtn.addEventListener('click', () => {
-            galleryGrid.querySelectorAll('.gallery-item--hidden').forEach(el => {
-              el.classList.remove('gallery-item--hidden');
-              el.removeAttribute('aria-hidden');
-            });
-            showAllBtn.closest('.gallery-show-all').style.display = 'none';
-          });
+      // ── Article Media Gallery ──
+      const gallery = document.getElementById('article-gallery');
+      if (gallery) {
+        const slides      = Array.from(gallery.querySelectorAll('.gallery-slide'));
+        const thumbs      = Array.from(gallery.querySelectorAll('.gallery-thumb'));
+        const captionEl   = gallery.querySelector('.gallery-caption-text');
+        const counterEl   = gallery.querySelector('.gallery-counter-text');
+        const prevBtn     = gallery.querySelector('.gallery-nav--prev');
+        const nextBtn     = gallery.querySelector('.gallery-nav--next');
+        const captions    = slides.map(s => s.dataset.caption || '');
+        let current       = 0;
+        let transitioning = false;
+
+        // ── Navigate to slide index ──
+        function goTo(idx) {
+          if (transitioning) return;
+          const next = ((idx % slides.length) + slides.length) % slides.length;
+          if (next === current) return;
+          transitioning = true;
+
+          slides[current].classList.remove('active');
+          thumbs[current].classList.remove('active');
+          thumbs[current].setAttribute('aria-selected', 'false');
+
+          current = next;
+
+          slides[current].classList.add('active');
+          thumbs[current].classList.add('active');
+          thumbs[current].setAttribute('aria-selected', 'true');
+
+          // Update counter
+          if (counterEl) counterEl.textContent = `${current + 1} / ${slides.length}`;
+
+          // Cross-fade caption text
+          if (captionEl) {
+            captionEl.classList.add('fading');
+            setTimeout(() => {
+              captionEl.textContent = captions[current];
+              captionEl.classList.remove('fading');
+            }, 220);
+          }
+
+          // Scroll active thumb into view
+          thumbs[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+          setTimeout(() => { transitioning = false; }, 540);
         }
 
-        // Build lightbox
+        // Thumbnail clicks
+        thumbs.forEach((thumb, i) => thumb.addEventListener('click', () => goTo(i)));
+
+        // Arrow buttons
+        prevBtn?.addEventListener('click', e => { e.stopPropagation(); goTo(current - 1); });
+        nextBtn?.addEventListener('click', e => { e.stopPropagation(); goTo(current + 1); });
+
+        // Keyboard navigation on gallery
+        gallery.addEventListener('keydown', e => {
+          if (e.key === 'ArrowLeft')  { e.preventDefault(); goTo(current - 1); }
+          if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
+        });
+
+        // ── Lightbox (photo slides only) ──
         const lb = document.createElement('div');
         lb.className = 'gallery-lightbox';
         lb.setAttribute('role', 'dialog');
@@ -599,79 +729,75 @@
           <button class="gallery-lightbox-nav gallery-lightbox-next" aria-label="Следующее фото">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
           </button>
-          <span class="gallery-lightbox-counter"></span>
-        `;
+          <span class="gallery-lightbox-counter"></span>`;
         document.body.appendChild(lb);
 
-        const lbImg     = lb.querySelector('.gallery-lightbox-img');
-        const lbCounter = lb.querySelector('.gallery-lightbox-counter');
-        let currentIdx  = 0;
+        const lbImg      = lb.querySelector('.gallery-lightbox-img');
+        const lbCounter  = lb.querySelector('.gallery-lightbox-counter');
+        const photoSlides = slides.filter(s => !s.classList.contains('gallery-slide--video'));
+        let lbIdx = 0;
 
-        const visibleItems = () =>
-          Array.from(galleryGrid.querySelectorAll('.gallery-item:not(.gallery-item--hidden)'));
-
-        const showPhoto = idx => {
-          const items = visibleItems();
-          currentIdx = (idx + items.length) % items.length;
-          const img = items[currentIdx].querySelector('img');
-          lbImg.src = img.src.replace(/w=\d+/, 'w=1200').replace(/q=\d+/, 'q=90');
+        function showLb(idx) {
+          lbIdx = ((idx % photoSlides.length) + photoSlides.length) % photoSlides.length;
+          const img = photoSlides[lbIdx].querySelector('.gallery-stage-img');
+          lbImg.src = img.src.replace(/w=\d+/, 'w=1400').replace(/q=\d+/, 'q=90');
           lbImg.alt = img.alt;
-          lbCounter.textContent = `${currentIdx + 1} / ${items.length}`;
-        };
+          lbCounter.textContent = `${lbIdx + 1} / ${photoSlides.length}`;
+        }
 
-        const openLb = idx => {
-          showPhoto(idx);
+        function openLightbox(slideIdx) {
+          const pi = photoSlides.indexOf(slides[slideIdx]);
+          if (pi < 0) return;
+          showLb(pi);
           lb.classList.add('open');
           document.body.style.overflow = 'hidden';
           lb.querySelector('.gallery-lightbox-close').focus();
-        };
+        }
 
-        const closeLb = () => {
+        function closeLightbox() {
           lb.classList.remove('open');
           document.body.style.overflow = '';
-        };
+        }
 
-        // Event delegation on grid
-        galleryGrid.addEventListener('click', e => {
-          const item = e.target.closest('.gallery-item');
-          if (!item) return;
-          openLb(visibleItems().indexOf(item));
-        });
-        galleryGrid.addEventListener('keydown', e => {
-          if (e.key !== 'Enter' && e.key !== ' ') return;
-          const item = e.target.closest('.gallery-item');
-          if (item) openLb(visibleItems().indexOf(item));
-        });
-
-        lb.querySelector('.gallery-lightbox-backdrop').addEventListener('click', closeLb);
-        lb.querySelector('.gallery-lightbox-close').addEventListener('click', closeLb);
-        lb.querySelector('.gallery-lightbox-prev').addEventListener('click', () => showPhoto(currentIdx - 1));
-        lb.querySelector('.gallery-lightbox-next').addEventListener('click', () => showPhoto(currentIdx + 1));
+        lb.querySelector('.gallery-lightbox-backdrop').addEventListener('click', closeLightbox);
+        lb.querySelector('.gallery-lightbox-close').addEventListener('click', closeLightbox);
+        lb.querySelector('.gallery-lightbox-prev').addEventListener('click', () => showLb(lbIdx - 1));
+        lb.querySelector('.gallery-lightbox-next').addEventListener('click', () => showLb(lbIdx + 1));
         document.addEventListener('keydown', e => {
           if (!lb.classList.contains('open')) return;
-          if (e.key === 'Escape')      closeLb();
-          if (e.key === 'ArrowLeft')   showPhoto(currentIdx - 1);
-          if (e.key === 'ArrowRight')  showPhoto(currentIdx + 1);
+          if (e.key === 'Escape')     closeLightbox();
+          if (e.key === 'ArrowLeft')  showLb(lbIdx - 1);
+          if (e.key === 'ArrowRight') showLb(lbIdx + 1);
         });
-      }
 
-      // ── YouTube video ──
-      const videoEmbed = document.querySelector('.video-embed[data-youtube-id]');
-      if (videoEmbed) {
-        videoEmbed.addEventListener('click', () => {
-          const id = videoEmbed.dataset.youtubeId;
-          videoEmbed.innerHTML = `<iframe
-            src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1"
-            style="position:absolute;inset:0;width:100%;height:100%;border:0;"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            title="${videoEmbed.getAttribute('aria-label') || 'Видео'}"
-          ></iframe>`;
-          videoEmbed.style.cursor = 'default';
-        }, { once: true });
+        // Stage click: photo → lightbox, video → ignore (handled below)
+        gallery.querySelector('.gallery-stage').addEventListener('click', e => {
+          if (e.target.closest('.gallery-nav')) return;
+          if (!slides[current].classList.contains('gallery-slide--video')) {
+            openLightbox(current);
+          }
+        });
 
-        videoEmbed.addEventListener('keydown', e => {
-          if (e.key === 'Enter' || e.key === ' ') videoEmbed.click();
+        // ── Video slide: click to embed YouTube ──
+        slides.forEach(slide => {
+          if (!slide.classList.contains('gallery-slide--video')) return;
+          slide.addEventListener('click', e => {
+            if (e.target.closest('.gallery-nav')) return;
+            // If not current, switch to it first
+            if (slides[current] !== slide) { goTo(slides.indexOf(slide)); return; }
+            // Already active — embed player
+            const id = slide.dataset.youtubeId;
+            slide.innerHTML = `<iframe
+              src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1"
+              style="position:absolute;inset:0;width:100%;height:100%;border:0;"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              title="Пресс-конференция Генерального секретаря ШОС по итогам саммита в Астане"
+            ></iframe>`;
+          });
+          slide.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); slide.click(); }
+          });
         });
       }
 
