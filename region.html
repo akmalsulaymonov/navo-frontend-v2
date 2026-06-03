@@ -561,6 +561,48 @@
         </aside>
       </div><!-- /.content-grid -->
 
+      <!-- ══════════════════════════════════════
+           INTERACTIVE MAP
+      ══════════════════════════════════════ -->
+      <section class="regions-map-section" aria-labelledby="regions-map-title">
+        <div class="regions-map-header">
+          <h2 class="regions-map-title" id="regions-map-title">Карта регионов</h2>
+          <p class="regions-map-subtitle">Нажмите на регион, чтобы перейти к материалам</p>
+        </div>
+
+        <div class="regions-map-layout">
+          <div class="regions-map-wrap" id="regions-map-wrap" role="group" aria-label="Карта Таджикистана — выберите регион">
+            <!-- SVG injected via JS -->
+          </div>
+
+          <div class="regions-map-legend" role="list" aria-label="Регионы на карте">
+            <a href="region-detail.html?id=dushanbe" class="regions-map-legend-item" role="listitem">
+              <span class="regions-map-legend-dot" aria-hidden="true"></span>
+              <span class="regions-map-legend-name">Душанбе</span>
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            </a>
+            <a href="region-detail.html?id=sogd" class="regions-map-legend-item" role="listitem">
+              <span class="regions-map-legend-dot" aria-hidden="true"></span>
+              <span class="regions-map-legend-name">Согдийская область</span>
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            </a>
+            <a href="region-detail.html?id=khatlon" class="regions-map-legend-item" role="listitem">
+              <span class="regions-map-legend-dot" aria-hidden="true"></span>
+              <span class="regions-map-legend-name">Хатлонская область</span>
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            </a>
+            <a href="region-detail.html?id=gbao" class="regions-map-legend-item" role="listitem">
+              <span class="regions-map-legend-dot" aria-hidden="true"></span>
+              <span class="regions-map-legend-name">ГБАО — Горный Бадахшан</span>
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Tooltip -->
+        <div class="regions-map-tooltip" id="regions-map-tooltip" role="tooltip" aria-hidden="true"></div>
+      </section>
+
     </div><!-- /.container -->
   </main>
 
@@ -749,6 +791,80 @@
     });
 
     setRegion('all');
+  </script>
+
+  <!-- Interactive Map -->
+  <script type="module">
+    (async function initMap() {
+      const wrap    = document.getElementById('regions-map-wrap');
+      const tooltip = document.getElementById('regions-map-tooltip');
+      if (!wrap) return;
+
+      let svgText;
+      try {
+        const res = await fetch('./assets/map.svg');
+        svgText   = await res.text();
+      } catch (e) {
+        wrap.style.display = 'none';
+        return;
+      }
+
+      // Inject SVG
+      const parser = new DOMParser();
+      const doc    = parser.parseFromString(svgText, 'image/svg+xml');
+      const svg    = doc.querySelector('svg');
+      if (!svg) return;
+
+      svg.removeAttribute('width');
+      svg.removeAttribute('height');
+      svg.setAttribute('viewBox', '0 0 792.50275 572.02728');
+      svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+      svg.style.width  = '100%';
+      svg.style.height = '100%';
+      wrap.appendChild(document.adoptNode(svg));
+
+      const regions = wrap.querySelectorAll('.map-region');
+
+      regions.forEach(path => {
+        const slug  = path.dataset.region;
+        const label = path.dataset.label;
+        const href  = `region-detail.html?id=${slug}`;
+
+        // Click → navigate
+        path.addEventListener('click', () => {
+          window.location.href = href;
+        });
+
+        // Keyboard Enter / Space
+        path.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            window.location.href = href;
+          }
+        });
+
+        // Tooltip on hover
+        path.addEventListener('mouseenter', e => {
+          tooltip.textContent  = label;
+          tooltip.style.opacity = '1';
+          tooltip.removeAttribute('aria-hidden');
+          positionTooltip(e);
+        });
+        path.addEventListener('mousemove', positionTooltip);
+        path.addEventListener('mouseleave', () => {
+          tooltip.style.opacity = '0';
+          tooltip.setAttribute('aria-hidden', 'true');
+        });
+      });
+
+      function positionTooltip(e) {
+        const rect = wrap.getBoundingClientRect();
+        const x    = e.clientX - rect.left + 12;
+        const y    = e.clientY - rect.top  - 36;
+        tooltip.style.left = x + 'px';
+        tooltip.style.top  = y + 'px';
+      }
+    })();
   </script>
 </body>
 </html>

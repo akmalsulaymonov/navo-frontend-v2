@@ -164,6 +164,43 @@
 
         </aside>
       </div>
+
+      <!-- Interactive Map -->
+      <section class="regions-map-section" aria-labelledby="detail-map-title">
+        <div class="regions-map-header">
+          <h2 class="regions-map-title" id="detail-map-title">Карта регионов</h2>
+          <p class="regions-map-subtitle">Нажмите на другой регион, чтобы перейти к его материалам</p>
+        </div>
+        <div class="regions-map-layout">
+          <div class="regions-map-wrap" id="detail-map-wrap" role="img" aria-label="Интерактивная карта Таджикистана">
+            <!-- SVG injected via JS -->
+          </div>
+          <div class="regions-map-legend" role="list">
+            <a href="region-detail.html?id=dushanbe" class="regions-map-legend-item" data-legend="dushanbe">
+              <span class="regions-map-legend-dot"></span>
+              <span class="regions-map-legend-name">Душанбе</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            </a>
+            <a href="region-detail.html?id=sogd" class="regions-map-legend-item" data-legend="sogd">
+              <span class="regions-map-legend-dot"></span>
+              <span class="regions-map-legend-name">Согдийская область</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            </a>
+            <a href="region-detail.html?id=khatlon" class="regions-map-legend-item" data-legend="khatlon">
+              <span class="regions-map-legend-dot"></span>
+              <span class="regions-map-legend-name">Хатлонская область</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            </a>
+            <a href="region-detail.html?id=gbao" class="regions-map-legend-item" data-legend="gbao">
+              <span class="regions-map-legend-dot"></span>
+              <span class="regions-map-legend-name">ГБАО</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="regions-map-tooltip" id="detail-map-tooltip" role="tooltip" aria-live="polite"></div>
+      </section>
+
     </div>
   </main>
 
@@ -533,6 +570,76 @@
         }
       }, 400);
     });
+
+    // ── Interactive detail map ────────────────────────────────────────
+    (async function initDetailMap() {
+      const wrap    = document.getElementById('detail-map-wrap');
+      const tooltip = document.getElementById('detail-map-tooltip');
+      if (!wrap || !tooltip) return;
+
+      const res     = await fetch('./assets/map.svg');
+      const svgText = await res.text();
+      const svgDoc  = new DOMParser().parseFromString(svgText, 'image/svg+xml');
+      const svg     = svgDoc.querySelector('svg');
+      svg.removeAttribute('width');
+      svg.removeAttribute('height');
+      svg.setAttribute('viewBox', '0 0 792.50275 572.02728');
+      svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+      wrap.appendChild(document.adoptNode(svg));
+
+      // Mark active legend item
+      const activeLegend = document.querySelector(`.regions-map-legend-item[data-legend="${id}"]`);
+      if (activeLegend) {
+        activeLegend.classList.add('regions-map-legend-item--active');
+        activeLegend.removeAttribute('href');
+      }
+
+      function positionTooltip(e) {
+        const rect = wrap.getBoundingClientRect();
+        tooltip.style.left = (e.clientX - rect.left + 12) + 'px';
+        tooltip.style.top  = (e.clientY - rect.top  - 36) + 'px';
+      }
+
+      wrap.querySelectorAll('.map-region').forEach(path => {
+        const slug     = path.dataset.region;
+        const label    = path.dataset.label;
+        const isActive = slug === id;
+
+        if (isActive) {
+          path.style.fill   = '#0082C9';
+          path.style.filter = 'drop-shadow(0 0 10px rgba(0,130,201,0.55))';
+          path.style.cursor = 'default';
+          path.removeAttribute('tabindex');
+          path.setAttribute('aria-current', 'page');
+          path.setAttribute('aria-label', label + ' — текущий регион');
+          path.addEventListener('mouseenter', e => {
+            tooltip.textContent = label + ' — текущий регион';
+            tooltip.style.opacity = '1';
+            positionTooltip(e);
+          });
+          path.addEventListener('mousemove', positionTooltip);
+          path.addEventListener('mouseleave', () => { tooltip.style.opacity = '0'; });
+        } else {
+          path.style.fill = '#B8DFF0';
+          const href = `region-detail.html?id=${slug}`;
+          path.addEventListener('click', () => { window.location.href = href; });
+          path.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.location.href = href; }
+          });
+          path.addEventListener('mouseenter', e => {
+            path.style.fill = '#5BB8E8';
+            tooltip.textContent = label;
+            tooltip.style.opacity = '1';
+            positionTooltip(e);
+          });
+          path.addEventListener('mousemove', positionTooltip);
+          path.addEventListener('mouseleave', () => {
+            path.style.fill = '#B8DFF0';
+            tooltip.style.opacity = '0';
+          });
+        }
+      });
+    })();
   </script>
 </body>
 </html>
